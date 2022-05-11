@@ -4,7 +4,7 @@ from math import *
 from constantes import *
 
 
-
+listes_passe=[]
 
 class case():
     def __init__(self,val,i,j,param):
@@ -63,6 +63,7 @@ def Creer(Cases,taille):
                 if Cases[i][j].val == val:
                     Cases[i][j].val = case1.val 
                     Cases[i][j].color = case1.color
+
                     
 def pattern(Cases,x,taille,param):
     """ cree un patern sous la forme
@@ -78,7 +79,9 @@ def pattern(Cases,x,taille,param):
     alt = 0
     for i in range(taille):
         Cases[x].append(case(0,x,i,param))
+        
     for i in range(taille):
+        if alt!=0:listes_passe.append((x,i))
         if i == taille-1 or x == taille-2: alt = 0
         Cases[x+1].append(case(alt,x+1,i,param))
         if alt != 0: alt = 0
@@ -102,7 +105,7 @@ def copy(taille,Cases,param):
     Cases[taille-2][taille-1].color = Cases[taille-2][taille-2].color
 
 def convertEnHex(r,g,b):
-    d = '0123456789ABCDEF'
+    d = '0123456789abcdef'
     rr = d[r//16]+d[r%16]
     gg = d[g//16]+d[g%16]
     bb = d[b//16]+d[b%16]
@@ -123,6 +126,7 @@ def Complex(Cases,ctComplex,taille):
         y = randint(0,((taille-1) / 2)) * 2 + 1    
     else:
         y = randint(0,ceil((taille-2) / 2)) * 2 + 2
+        
     if x >=taille-1 or y >=taille-1:
         return ctComplex
     if Cases[x][y].val == 0:

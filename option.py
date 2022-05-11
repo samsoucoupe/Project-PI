@@ -9,8 +9,9 @@ class option():
         self.fenetre_option = Tk()
         self.fenetre_option.title('Option')
         self.fenetre_option.resizable(width=False, height=False)#non resizable
+        
 
-        self.scale = Scale(self.fenetre_option, variable=self.taille,orient='horizontal',from_=taille_min, to=taille_max, resolution=2,length=200,label="Taille du labyrinth",command=self.resize)
+        self.scale = Scale(self.fenetre_option, variable=self.taille,orient='horizontal',from_=taille_min, to=taille_max, resolution=2,length=200,label="Taille du labyrinth",cursor='question_arrow',command=self.resize)
         self.scale.set(self.taille)
         self.scale.pack()
         
@@ -19,10 +20,10 @@ class option():
         self.param.couleur =  self.couleur_Var
         self.quelle_couleur()
         for i in range(len(self.vals)):
-            self.b = Radiobutton(self.fenetre_option, text=self.vals[i], variable=self.couleur_Var,value=self.vals[i], command=self.quelle_couleur)
+            self.b = Radiobutton(self.fenetre_option, text=self.vals[i], variable=self.couleur_Var,value=self.vals[i],cursor='question_arrow', command=self.quelle_couleur)
             self.b.pack(side='left', expand=1)
         
-        self.fermer = Button(self.fenetre_option, text='Valider', command=self.fenetre_option.destroy).place(x=self.taille*n/2,y=self.taille*n*0.9)
+        self.fermer = Button(self.fenetre_option, text='Valider',cursor='rtl_logo', command=self.fenetre_option.destroy).place(x=self.taille*n/2,y=self.taille*n*0.9)
         
         
         
@@ -45,5 +46,6 @@ class option():
             self.param.couleur = couleur[1]
         else:
             self.param.couleur = couleur
+        
 
     

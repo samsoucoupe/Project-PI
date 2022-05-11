@@ -23,7 +23,7 @@ class main():
         copy(self.taille,self.Cases,self.param)
         
         
-        self.f=Aff_TK(self.taille)
+        self.f=Aff_TK(self.taille,self.param)
         self.joueur=Joueur(1,0)
         self.ctComplexMax = self.taille/3 
         
@@ -34,6 +34,7 @@ class main():
         elif self.ctComplex<self.ctComplexMax:
             self.ctComplex=Complex(self.Cases,self.ctComplex,self.taille)
         else:
+            self.param.couleur=self.Cases[self.taille-2][self.taille-1].color
             self.joueur.visible=True
             self.f.Dessin(self.Cases,self.joueur)
             return self.play()
@@ -43,7 +44,8 @@ class main():
         if self.joueur.fin((self.taille-2,self.taille-1)):
             print("fini")
             self.joueur.fini=True
-            return self.joueur.deplacer(self.Cases,self.f,self.taille)
+            self.joueur.deplacer(self.Cases,self.f,self.taille)
+            return self.f.fin()
         else:
             self.joueur.deplacer(self.Cases,self.f,self.taille)
             self.f.fenetre.after(15,self.play)
@@ -57,6 +59,5 @@ class main():
 M=main(taille,ct)
 #M.Dessiner_les_patern()
 M.launch()
-
 
 M.f.fenetre.mainloop()
