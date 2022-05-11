@@ -18,19 +18,22 @@ class option():
         self.couleur_Var = StringVar()
         self.couleur_Var.set(self.vals[0])
         self.param.couleur =  self.couleur_Var
+
         self.quelle_couleur()
         for i in range(len(self.vals)):
             self.b = Radiobutton(self.fenetre_option, text=self.vals[i], variable=self.couleur_Var,value=self.vals[i],cursor='question_arrow', command=self.quelle_couleur)
             self.b.pack(side='left', expand=1)
+
+
         
-        self.fermer = Button(self.fenetre_option, text='Valider',cursor='rtl_logo', command=self.fenetre_option.destroy).place(x=self.taille*n/2,y=self.taille*n*0.9)
-        
-        
-        
-        self.fenetre_option.geometry(f'{100*len(self.vals)}x{100*len(self.vals)}')
+        self.Valider = Button(self.fenetre_option, text='Valider',cursor='rtl_logo', command=self.fenetre_option.destroy).place(x=100*len(self.vals)/2,y=50*len(self.vals)*0.9)
         
         
         
+        
+        self.fenetre_option.geometry(f'{100*len(self.vals)}x{50*len(self.vals)}')
+        
+
     def resize(self,val):
        self.param.taille=int(val)
 

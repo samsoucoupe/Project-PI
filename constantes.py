@@ -5,8 +5,9 @@ taille=31
 n = 20
 ct = 1
 
-texte_recomendation = "Recommandation : \n\nPour commencer vous pouvez lance le fichier createur.py pour visualier la versions sans le TKinter.\n\n\
-    Ensuite pour la partie affichage je conseil de lance avec une taille de 31 la versions 51 est plus impresionante mais plus longue.\n"
+texte_recomendation = "Recommandation : \n\n\
+    Pour commencer vous pouvez lancer le fichier créateur.py pour visualiser la version sans le Tkinter.\n\n\
+        Ensuite, pour la partie affichage, je conseille de lance avec une taille de 31, même si la version avec 51 est plus impressionnante mais plus longue.\n"
 texte_couleur="Couleur : \n\n\
     Vous avez différentes couleurs pour les patterns.\n\n\
         La recommandation est de choisir multi, car c'est avec celle-ci que la compréhension est la meilleure.\n\

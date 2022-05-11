@@ -19,13 +19,13 @@ class main():
         
         self.p.launch()
         self.taille = self.param.taille
-        
         copy(self.taille,self.Cases,self.param)
         
         
         self.f=Aff_TK(self.taille,self.param)
         self.joueur=Joueur(1,0)
         self.ctComplexMax = self.taille/3 
+        self.launch()
         
     def launch(self):
         self.f.Dessin(self.Cases,self.joueur)
@@ -58,6 +58,6 @@ class main():
 
 M=main(taille,ct)
 #M.Dessiner_les_patern()
-M.launch()
+
 
 M.f.fenetre.mainloop()
