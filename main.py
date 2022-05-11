@@ -42,7 +42,7 @@ class main():
         
     def play(self):
         if self.joueur.fin((self.taille-2,self.taille-1)):
-            print("fini")
+            
             self.joueur.fini=True
             self.joueur.deplacer(self.Cases,self.f,self.taille)
             return self.f.fin()

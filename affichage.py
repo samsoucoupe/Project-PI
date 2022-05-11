@@ -10,6 +10,7 @@ class Aff_TK():
         self.change=False
         self.fenetre = Tk()
         self.param=param
+        self.fenetre.title("Labyrinthe")
         self.fenetre.resizable(width=False, height=False)#non resizable
         self.canvas = Canvas(self.fenetre,height = self.taille*n,width = self.taille*n)
 
@@ -36,7 +37,6 @@ class Aff_TK():
             hexa_inverse=""
             for elt in hexa:
                 index=liste_normal.index(elt)
-                print(elt,index)
                 hexa_inverse=hexa_inverse+liste_inverse[index]
             hexa_inverse="#"+hexa_inverse
             return hexa_inverse
@@ -59,3 +59,6 @@ class Aff_TK():
         fenetre_fin=Toplevel()
         fenetre_fin.title("Fin")
         Label(fenetre_fin,text=txt).pack()
+
+if __name__ != '__main__':
+    print("import de l'affichage check")

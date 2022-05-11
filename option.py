@@ -9,12 +9,12 @@ class option():
         self.fenetre_option = Tk()
         self.fenetre_option.title('Option')
         self.fenetre_option.resizable(width=False, height=False)#non resizable
-        
+        self.info = Label(self.fenetre_option,text=texte_recomendation).pack()
 
         self.scale = Scale(self.fenetre_option, variable=self.taille,orient='horizontal',from_=taille_min, to=taille_max, resolution=2,length=200,label="Taille du labyrinth",cursor='question_arrow',command=self.resize)
         self.scale.set(self.taille)
         self.scale.pack()
-        
+        self.info_couleur = Label(self.fenetre_option,text=texte_couleur).pack()
         self.couleur_Var = StringVar()
         self.couleur_Var.set(self.vals[0])
         self.param.couleur =  self.couleur_Var
@@ -49,3 +49,5 @@ class option():
         
 
     
+if __name__ != '__main__':
+    print("import fenetre option  check")

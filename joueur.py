@@ -60,7 +60,7 @@ class Joueur():
     def draw(self,Cases,fen):
         
         if (self.o,self.a)==(taille-1,taille-2):  
-            fen.fenetre.label("fini")
+            fen.fenetre.title("fini")
         else:
             fen.Dessin(Cases,self)
         
