@@ -25,13 +25,14 @@ class option():
             self.b.pack(side='left', expand=1)
 
 
+        self.h=50*len(self.vals)
+        self.l=100*len(self.vals)
+        self.Valider = Button(self.fenetre_option, text='Valider',cursor='rtl_logo', command=self.fenetre_option.destroy).place(x=self.l/2,y=self.h*0.9)
         
-        self.Valider = Button(self.fenetre_option, text='Valider',cursor='rtl_logo', command=self.fenetre_option.destroy).place(x=100*len(self.vals)/2,y=50*len(self.vals)*0.9)
         
         
         
-        
-        self.fenetre_option.geometry(f'{100*len(self.vals)}x{50*len(self.vals)}')
+        self.fenetre_option.geometry(f'{self.l}x{self.h}')
         
 
     def resize(self,val):
